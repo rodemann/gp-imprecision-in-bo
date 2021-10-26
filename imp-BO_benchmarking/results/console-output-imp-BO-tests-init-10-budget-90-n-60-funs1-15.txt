@@ -1,0 +1,21 @@
+
+> # divide into chunks
+> synth_test_functions <- all_benchmark_funs[1:15]
+
+> number_of_funs <- length(synth_test_functions)  
+
+> # define sample size (number of BO runs per test function)
+> n <- 60
+
+> # define total Budget of evaluations per BO run
+> budget <- 90   
+
+> # define initial design size
+> init_design <- 10
+
+> # list that is used inside foreach
+> results_list <- list()
+
+> # # parallelize over functions WARNING only tested on linux  
+> # cl <- parallel::makeCluster(number_of_funs)
+> # doParallel::registerDoParallel(cl) .... [TRUNCATED] 
