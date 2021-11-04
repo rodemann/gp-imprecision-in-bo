@@ -4,8 +4,8 @@
 ### Introduction, TOC
 This repository contains Prior-RObust Bayesian Optimization (PROBO) as introduced in our paper "Accounting for Gaussian Process Imprecision in Bayesian Optimization" (Rodemann, Augustin). More precisely,
 
-* [imprecise-bayes-opt-plug-in](imprecise-bayes-opt-plug-in) contains implementation of PROBO
-* [imp-BO_benchmarking](imp-BO_benchmarking) provides files for simulation experiments (section 4), see setup below
+* [PROBO](PROBO) contains implementation of PROBO
+* [imp-BO_benchmarking](imp-BO_benchmarking) provides files for experiments (section 4), in order to reproduce results, see setup below
 * files in [data](data) allow recreating visualizations of data and functions used in the benchmark experiments, see below
 
 
