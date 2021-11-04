@@ -1,5 +1,5 @@
-source("imprecise-bayes-opt-plug-in/makeMBOInfillCritGLCB.R")
-source("imprecise-bayes-opt-plug-in/initCrit.InfillCritGLCB.R")
+source("PROBO/makeMBOInfillCritGLCB.R")
+source("PROBO/initCrit.InfillCritGLCB.R")
 source("data/read-data-kapton.R")
 library(dplyr)
 library(mlrMBO)

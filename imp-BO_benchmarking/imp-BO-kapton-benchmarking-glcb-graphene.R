@@ -16,8 +16,8 @@ set.seed(628496)
 # source graphene (kapton) data and respective RF as target function (including visualization)
 source("data/make-kapton-rf.R") # time
 # source files that integrate GLCB into mlrMBO
-source("imprecise-bayes-opt-plug-in/makeMBOInfillCritGLCB.R")
-source("imprecise-bayes-opt-plug-in/initCrit.InfillCritGLCB.R")
+source("PROBO/makeMBOInfillCritGLCB.R")
+source("PROBO/initCrit.InfillCritGLCB.R")
 
 
 # globally only one target fun
