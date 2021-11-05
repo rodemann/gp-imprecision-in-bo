@@ -49,35 +49,5 @@ kapton_fun_rf = makeSingleObjectiveFunction(
  
 
 
-# # set up BO 
-# iters = 15L
-# # set Control Argument of BO 
-# ctrl = makeMBOControl(propose.points = 1L)
-# ctrl = setMBOControlTermination(ctrl, iters = iters)
-# # plug in GLCB
-# infill_crit = makeMBOInfillCritGLCB(cb.lambda = 1, cb.rho = 100)
-# infill_crit = makeMBOInfillCritCB(cb.lambda = 1)
-# ctrl = setMBOControlInfill(ctrl, crit = infill_crit, opt = "focussearch")#,
-# #opt.focussearch.points = 200, opt.focussearch.maxit = 1)
-# 
-# lrn = makeLearner("regr.km", covtype = "powexp", predict.type = "se", optim.method = "gen", 
-#                   control = list(trace = FALSE), config = list(on.par.without.desc = "warn"))
-# # ensure numerical stability in km {DiceKriging} cf. github issue and recommendation by Bernd Bischl 
-# y = obj_fun(design_biased)
-# Nuggets = 1e-8*var(y)
-# lrn = setHyperPars(learner = lrn, nugget=Nuggets)
-# initial_opt = max(y)
-# 
-# 
-# res_mbo = mbo(fun = obj_fun, design = design_biased, control = ctrl)
-# 
-# as.data.frame(res_mbo$opt.path)
-# c( res_mbo$y, res_mbo$best.ind)
-# initial_opt
-
-
-
-
-
 
 

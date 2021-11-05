@@ -133,5 +133,5 @@ for (i in 1:1) { # allows for assessing more than one function or more than one 
 
 
 # save results in repo so that it can be accessed and visualized later
-save(results_list, file = paste(getwd(),"/imp-BO_benchmarking/results/results-imp-BO-graphene-probo-new" ,sep=""))
+save(results_list, file = paste(getwd(),"/imp-BO_benchmarking/results/results-imp-BO-graphene-glcb" ,sep=""))
  
