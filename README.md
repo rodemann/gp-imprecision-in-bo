@@ -37,6 +37,6 @@ Note that it's also possible to direclty visualize the stored results by only ru
 ### Data
 
 Find files to read in data and create target functions in folder [data](data). 
-E.g. source [data/make-kapton-rf.R](data/make-kapton-rf.R) to read in graphene data (source [https://www.sciencedirect.com/science/article/abs/pii/S0008622320305285](is here)) and reproduce figure 1 of the paper
+E.g. source [data/make-kapton-rf.R](data/make-kapton-rf.R) to read in graphene data (source [is here](https://www.sciencedirect.com/science/article/abs/pii/S0008622320305285)) and reproduce figure 1 of the paper
 
 
