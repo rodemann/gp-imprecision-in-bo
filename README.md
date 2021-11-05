@@ -32,17 +32,11 @@ In order to reproduce the thesis' key results for glcb on graphene data, please
 * results are saved automatically
 * source [this file](imp-BO_benchmarking/viz-glcb-all-comparisons.R) to visualize the retrieved results
 
-Or, alternatively, for glcb on synthetic function, please
-
-* [kick off simulation](imp-BO_benchmarking/imp-BO-synthetic-benchmarking-glcb-only-1.R)
-* [visualize your simulation's results](imp-BO_benchmarking/imp-BO-benchmarking-synthetic-glcb-vs-ei-lcb-viz.R)
-
 Note that it's also possible to direclty visualize the stored results by only running the visualization files. In case of own simulation, these stored results will be overwritten.
 
 ### Data
 
 Find files to read in data and create target functions in folder [data](data). 
-E.g. source [data/data-heartbeat-1.R](data/data-heartbeat-1.R) to read in heartbeat time series from http://ecg.mit.edu/time-series/.
-Or run [data/make-heartbeat-1.R](data/make-heartbeat-1.R) to directly retrieve heartbeat target function, including a ggplot2-visualization.
+E.g. source [data/make-kapton-rf.R](data/make-kapton-rf.R) to read in graphene data from https://www.sciencedirect.com/science/article/abs/pii/S0008622320305285 and reproduce figure 1 of the paper
 
 
