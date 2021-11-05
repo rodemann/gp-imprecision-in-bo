@@ -112,8 +112,8 @@ plots_lcb_pub
 plots_ei_pub
 plots_aei_pub
 plots_alcb_pub
-plots_eqi_pub
 plots_se_pub
+plots_eqi_pub
 
 
 #Optional: get publication ready pages with multiple ggplot objects
