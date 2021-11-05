@@ -12,10 +12,13 @@ This repository contains Prior-RObust Bayesian Optimization (PROBO) as introduce
 ### Tested with
 
 - R 4.0.3
+- R 4.1.6
+- R 3.6.3
 
 on
 - Linux Ubuntu 20.04
-- Windows 10 Build
+- Linux Debian 10
+- Windows 10 Build 20H2 
 - MacOS (only visualization)
 
 
