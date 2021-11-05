@@ -9,10 +9,7 @@ source("imp-BO_benchmarking/draw_legend_kapton.R")
 # ggplot2 is loaded within these dependencies
 
 # select results
-# load("imp-BO_benchmarking/results/results-imp-BO-kapton-power-glcb-complete")
-# load("imp-BO_benchmarking/results/results-imp-BO-wind-humidity")
-#load("imp-BO_benchmarking/results/results-imp-BO-heartbeat-2")
-load("imp-BO_benchmarking/results/results-imp-BO-graphene-glcb")
+load("imp-BO_benchmarking/results/_test-results-imp-BO-kapton-glcb-5")
 
 # selection of color palettes
 pal_ucs <- pal_ucscgb("default")(9)
