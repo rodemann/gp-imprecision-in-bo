@@ -7,7 +7,6 @@ source("imp-BO_benchmarking/draw_plot_boot.R")
 source("imp-BO_benchmarking/draw_plot_boot_facet.R")
 source("imp-BO_benchmarking/draw_legend_kapton.R")
 # ggplot2 is loaded within these dependencies
-library(ggpubr)
 
 # select results
 # load("imp-BO_benchmarking/results/results-imp-BO-kapton-power-glcb-complete")
@@ -121,14 +120,15 @@ plots_se_pub
 
 
 #Optional: get publication ready pages with multiple ggplot objects
-pub_page = ggarrange(plots_ei_pub, plots_lcb_pub, plots_aei_pub,
-                             ncol = 1, nrow = 3)
-pub_page_2 = ggarrange(
-  plots_alcb_pub, plots_eqi_pub, plots_se_pub,
-  ncol = 1, nrow = 3)
-
-pub_page
-pub_page_2
+#library(ggpubr)
+# pub_page = ggarrange(plots_ei_pub, plots_lcb_pub, plots_aei_pub,
+#                              ncol = 1, nrow = 3)
+# pub_page_2 = ggarrange(
+#   plots_alcb_pub, plots_eqi_pub, plots_se_pub,
+#   ncol = 1, nrow = 3)
+# 
+# pub_page
+# pub_page_2
 
 
 
