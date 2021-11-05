@@ -30,7 +30,7 @@ In order to reproduce **figure 2** showing the papers' key results (and visualiz
 
 * source [this file](imp-BO_benchmarking/viz-probo-all-comparisons.R)  
 
-In order to rerun all simulations described in section 4 (PROBO on graphene data), please 
+Please find optional (currently commented out) visualizations in lines 118-159 of this very file. In order to rerun all simulations described in section 4 (PROBO on graphene data), please 
 
 * source [this file](imp-BO_benchmarking/main-PROBO-benchmarking-graphene.R) to kick off the simulation study (estimated time on 64-bit-core (linux gnu): 11h)
 * results are saved automatically
