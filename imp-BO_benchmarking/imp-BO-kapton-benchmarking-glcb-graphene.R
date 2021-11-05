@@ -1,7 +1,7 @@
 # this file runs a simulation of n = 60 BO runs with a Budget
 # of 90 evaluations and initial design of size 10
 # a detailed description of the experiment can be found in the 
-# thesis in section 6.6.1
+# paper in section 4
 
 library(mlrMBO)
 library(rgenoud)
