@@ -1,6 +1,7 @@
 # this file runs a simulation of n = 60 BO runs with a Budget
-# of 90 evaluations and initial design of size 10
-# a detailed description of the experiment can be found in the 
+# of 90 evaluations and initial design of size 10 to benchmark PROBO
+# against classical BO with several aquisition functions
+# a detailed description of the experiments can be found in the 
 # paper in section 4
 
 library(mlrMBO)

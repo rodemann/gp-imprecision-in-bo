@@ -1,5 +1,5 @@
 # this file computes CIs and creates the figures for
-# glcb benchmarking results as presented in the thesis
+# PROBO benchmarking results 
 
 
 source("imp-BO_benchmarking/draw_plot.R")
