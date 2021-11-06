@@ -7,7 +7,7 @@ This repository contains Prior-RObust Bayesian Optimization (PROBO) as introduce
 * [PROBO](PROBO) contains implementation of PROBO
 * [benchmarking](benchmarking) provides files for experiments (section 4), in order to reproduce results, see setup below
 * files in [data](data) allow recreating visualizations of data and functions used in the benchmark experiments, see below
-* files in [univariate-target-functions](univariate-target-functions) allow visualization of synthetic test functions mentioned in section 4
+* files in [univariate-benchmark-functions](univariate-benchmark-functions) allow visualization of synthetic test functions mentioned in section 4
 
 
 ### Tested with
