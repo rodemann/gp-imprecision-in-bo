@@ -27,13 +27,13 @@ First and foremost, please clone this repo (and install required packages as ind
 
 In order to reproduce **figure 2** showing the papers' key results (and visualizations of further results not included but only mentioned in the paper on page 10) 
 
-* source [this file](imp-BO_benchmarking/viz-probo-all-comparisons.R)  
+* source [this file](benchmarking/viz-probo-all-comparisons.R)  
 
 Please find optional (currently commented out) visualizations in lines 118-159 of this very file. In order to rerun all simulations described in section 4 (PROBO on graphene data), please 
 
-* source [this file](imp-BO_benchmarking/main-PROBO-benchmarking-graphene.R) to kick off the simulation study (estimated time on 64-bit-core (linux gnu): 11h)
+* source [this file](benchmarking/main-PROBO-benchmarking-graphene.R) to kick off the simulation study (estimated time on 64-bit-core (linux gnu): 11h)
 * results are saved automatically
-* source [this file](imp-BO_benchmarking/viz-glcb-all-comparisons-new.R) to visualize the retrieved results
+* source [this file](benchmarking/viz-glcb-all-comparisons-new.R) to visualize the retrieved results
 
 
 ### Data
