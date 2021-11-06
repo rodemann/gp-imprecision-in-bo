@@ -1,5 +1,5 @@
 # this file computes CIs and creates the figures for
-# newly created PROBO benchmarking results 
+# existing PROBO benchmarking results 
 
 library(dplyr)
 
@@ -18,10 +18,11 @@ pal_ucs <- pal_ucscgb("default")(9)
 safe_colorblind_palette <- c("#88CCEE", "#CC6677", "#DDCC77", "#117733", "#332288", "#AA4499", 
                              "#44AA99", "#999933", "#882255")
 cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
-
-# choose colorblind-friendly palette
-pal <- safe_colorblind_palette
 optimum_col = "#ff00f7"
+
+pal <- cbbPalette
+# optional: choose colorblind-friendly palette if required
+# pal <- safe_colorblind_palette
 
 # set pal globally for comparison
 pal = pal[1:4]
@@ -85,10 +86,8 @@ configs_eqi = configs[c(5,7,8,9)]
 configs_se = configs[c(6,7,8,9)]
 
 
-pal = cbbPalette
 pal[c(1,4)] <- pal[c(4,1)]
 pal[4] <- "grey85"
-
 pal[c(1,4)] <- pal[c(4,1)]
 pal[c(2,3)] <- pal[c(3,2)]
 pal[c(3,4)] <- pal[c(4,3)]
@@ -118,9 +117,8 @@ pub_page_2 = ggarrange(plots_aei_pub,
                        plots_alcb_pub, plots_eqi_pub, plots_se_pub,
                        ncol = 1, nrow = 4)
 
-pub_page # note that this is figure 2 in the paper
 pub_page_2
-
+pub_page # note that this is figure 2 in the paper
 
 
 
