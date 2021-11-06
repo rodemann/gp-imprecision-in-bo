@@ -11,7 +11,7 @@ library(DiceKriging)
 library(ggplot2)
 library(randomForest)
 # set seed
-set.seed(628496)
+set.seed(293874)
  
 # source graphene (kapton) data and respective RF as target function (including visualization)
 source("data/make-kapton-rf.R") # time
@@ -133,5 +133,5 @@ for (i in 1:1) { # allows for assessing more than one function or more than one 
 
 
 # save results in repo so that it can be accessed and visualized later
-save(results_list, file = paste(getwd(),"/imp-BO_benchmarking/results/results-imp-BO-graphene-probo-new" ,sep=""))
+save(results_list, file = paste(getwd(),"/benchmarking/results/PROBO-results-graphene-new" ,sep=""))
  

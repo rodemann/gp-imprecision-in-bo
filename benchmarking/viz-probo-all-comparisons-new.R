@@ -1,15 +1,17 @@
 # this file computes CIs and creates the figures for
-# PROBO benchmarking results 
+# newly created PROBO benchmarking results 
 
+library(dplyr)
 
-source("imp-BO_benchmarking/draw_plot.R")
-source("imp-BO_benchmarking/draw_plot_boot.R")
-source("imp-BO_benchmarking/draw_plot_boot_facet.R")
-source("imp-BO_benchmarking/draw_legend_kapton.R")
+# source functions
+source("benchmarking/draw_plot.R")
+source("benchmarking/draw_plot_boot.R")
+source("benchmarking/draw_plot_boot_facet.R")
+source("benchmarking/draw_legend_kapton.R")
 # ggplot2 is loaded within these dependencies
 
 # select results
-load("imp-BO_benchmarking/results/results-imp-BO-graphene-probo-new")
+load("benchmarking/results/PROBO-results-graphene-new")
 
 # selection of color palettes
 pal_ucs <- pal_ucscgb("default")(9)
@@ -31,16 +33,16 @@ configs = c("LCB", "ALCB", "EI", "AEI", "EQI", "SE", "GLCB-1-50", "GLCB-1-100", 
 configs_indices = c(3,7,8,9)
 fun = 1
 plots_ei = draw_plot_boot_facet(fun = fun, results_list = results_list, bench = "EI",
-                              initial_design_size = 10, pal = pal, configs = configs, configs_indices = configs_indices) +
-    labs(x = "Evaluations", y = "Mean Best Target Value", col = "Acquisition Function") 
+                                initial_design_size = 10, pal = pal, configs = configs, configs_indices = configs_indices) +
+  labs(x = "Evaluations", y = "Mean Best Target Value", col = "Acquisition Function") 
 
-  
+
 # draw plot and compute CIs for GLCB vs LCB
 configs_indices = c(1,7,8,9)
 
 plots_lcb = draw_plot_boot_facet(fun = fun, results_list = results_list, bench = "LCB",
-                              initial_design_size = 10, pal = pal, configs = configs, configs_indices = configs_indices) +
-    labs(x = "Evaluations", y = "Mean Best Target Value", col = "Acquisition Function") 
+                                 initial_design_size = 10, pal = pal, configs = configs, configs_indices = configs_indices) +
+  labs(x = "Evaluations", y = "Mean Best Target Value", col = "Acquisition Function") 
 
 
 # draw plot and compute CIs for GLCB vs AEI
@@ -62,7 +64,7 @@ plots_alcb = draw_plot_boot_facet(fun = fun, results_list = results_list, bench 
 configs_indices = c(5,7,8,9)
 bench = "EQI"
 plots_eqi = draw_plot_boot_facet(fun = fun, results_list = results_list, bench = bench,
-                                  initial_design_size = 10, pal = pal, configs = configs, configs_indices = configs_indices) +
+                                 initial_design_size = 10, pal = pal, configs = configs, configs_indices = configs_indices) +
   labs(x = "Evaluations", y = "Mean Best Target Value", col = "Acquisition Function") 
 
 
@@ -70,8 +72,8 @@ plots_eqi = draw_plot_boot_facet(fun = fun, results_list = results_list, bench =
 # draw plot and compute CIs for GLCB vs SE
 configs_indices = c(6,7,8,9)
 plots_se = draw_plot_boot_facet(fun = fun, results_list = results_list, bench = "SE",
-                              initial_design_size = 10, pal = pal, configs = configs, configs_indices = configs_indices) +
-    labs(x = "Evaluations", y = "Mean Best Target Value", col = "Acquisition Function") 
+                                initial_design_size = 10, pal = pal, configs = configs, configs_indices = configs_indices) +
+  labs(x = "Evaluations", y = "Mean Best Target Value", col = "Acquisition Function") 
 
 
 # change order of configs to get correct order of legend in ggplot
@@ -87,45 +89,37 @@ pal = cbbPalette
 pal[c(1,4)] <- pal[c(4,1)]
 pal[4] <- "grey85"
 
-plots_lcb_pub = plots_lcb + scale_color_manual(values=pal, breaks = configs_lcb)
 pal[c(1,4)] <- pal[c(4,1)]
 pal[c(2,3)] <- pal[c(3,2)]
 pal[c(3,4)] <- pal[c(4,3)]
 pal[c(2,3)] <- pal[c(3,2)]
 pal[c(3,4)] <- pal[c(4,3)]
-
+plots_lcb_pub = plots_lcb + scale_color_manual(values=pal, breaks = configs_lcb)
 plots_ei_pub = plots_ei + scale_color_manual(values=pal, breaks = configs_ei) 
 plots_aei_pub = plots_aei + scale_color_manual(values=pal, breaks = configs_aei) 
 plots_alcb_pub = plots_alcb + scale_color_manual(values=pal, breaks = configs_alcb) 
 plots_eqi_pub = plots_eqi + scale_color_manual(values=pal, breaks = configs_eqi) 
-
-#pal = cbbPalette
-#pal[1] = "black"
-pal[c(2,3)] <- pal[c(3,2)]
-pal[c(1,4)] <- pal[c(4,1)]
-pal[c(1,3)] <- pal[c(3,1)]
-#show_col(pal)
-
 plots_se_pub = plots_se + scale_color_manual(values=pal, breaks = configs_se)
 
+# Optional: show all single plots
 plots_lcb_pub
 plots_ei_pub
 plots_aei_pub
 plots_alcb_pub
-plots_eqi_pub
 plots_se_pub
+plots_eqi_pub
 
 
 #Optional: get publication ready pages with multiple ggplot objects
-#library(ggpubr)
-# pub_page = ggarrange(plots_ei_pub, plots_lcb_pub, plots_aei_pub,
-#                              ncol = 1, nrow = 3)
-# pub_page_2 = ggarrange(
-#   plots_alcb_pub, plots_eqi_pub, plots_se_pub,
-#   ncol = 1, nrow = 3)
-# 
-# pub_page
-# pub_page_2
+library(ggpubr)
+pub_page = ggarrange(plots_ei_pub, plots_lcb_pub,
+                     ncol = 1, nrow = 2)
+pub_page_2 = ggarrange(plots_aei_pub,
+                       plots_alcb_pub, plots_eqi_pub, plots_se_pub,
+                       ncol = 1, nrow = 4)
+
+pub_page # note that this is figure 2 in the paper
+pub_page_2
 
 
 
@@ -137,7 +131,7 @@ plots_se_pub
 #                 bottom = text_grob("Bayesian optimization of graphene quality depending on laser irradiation time
 # 60 runs per Acquisition Function with 90 evaluations and initial sample size 10 each
 # Error bars represent bootstrapped 0.95-CI of incumbent mean best target value
-# EI = Expected Improvement, LCB = Lower Confidence Bound, AEI = Augmented Expected Improvement,
+# EI = Expected Improvement, LCB = Lower Confidence Bound.
 # GLCB-1-100 means rho = 1 and c = 100. tau = 1 for all GLCBs and for LCB.
 # ", color = "black", face = "bold", size = 10))
 # 
@@ -148,9 +142,9 @@ plots_se_pub
 #                 bottom = text_grob("Bayesian optimization of graphene quality depending on laser irradiation time
 # 60 runs per Acquisition Function with 90 evaluations and initial sample size 10 each
 # Error bars represent bootstrapped 0.95-CI of incumbent mean best target value
-# ALCB = Adaptive Lower Confidence Bound, EQI = Expected Quantile Improvement, SE = Standard Error
+# ALCB = Adaptive Lower Confidence Bound, EQI = Expected Quantile Improvement, SE = Standard Error,  AEI = Augmented Expected Improvement.
 # GLCB-1-100 means rho = 1 and c = 100. tau = 1 for all GLCBs. Adaptive LCB uses different values for tau
 # ", color = "black", face = "bold", size = 10))
-
+# 
 
 

@@ -3,7 +3,6 @@ library(tidyverse)
 #library(wesanderson)
 library(RColorBrewer)
 library(ggsci)
-library(ggshadow)
 
 
 
