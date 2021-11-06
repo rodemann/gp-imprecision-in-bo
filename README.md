@@ -18,7 +18,7 @@ on
 - Linux Ubuntu 20.04
 - Linux Debian 10
 - Windows 10 Build 20H2 
-- MacOS 
+- MacOS (only visualizations)
 
 
 ### Setup
